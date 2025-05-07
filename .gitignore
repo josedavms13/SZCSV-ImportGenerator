@@ -1,0 +1,6 @@
+node_modules
+.idea
+.code
+tests/**
+gscode
+output.xlsx

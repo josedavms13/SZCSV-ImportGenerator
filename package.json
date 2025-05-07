@@ -1,0 +1,29 @@
+{
+  "name": "testscriptparser",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/josedavms13/SZCSV-ImportGenerator#readme",
+  "bugs": {
+    "url": "https://github.com/josedavms13/SZCSV-ImportGenerator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josedavms13/SZCSV-ImportGenerator.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
