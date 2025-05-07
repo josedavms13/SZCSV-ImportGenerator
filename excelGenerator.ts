@@ -1,5 +1,4 @@
 import ExcelJS from 'exceljs';
-import {getTests} from './gscode/testManagement';
 import {
     fillCoverageIssues, fillExpectedResult,
     fillFolder,
