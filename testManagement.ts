@@ -77,7 +77,7 @@ export function getSteps(steps: string): TestStep[] {
         const ongoingTest = test.split(" //");
         return {
             step: ongoingTest[0].replaceAll(" * ", "\n"),
-            expectedResults: ongoingTest[1].replaceAll(" * ", "\n"),
+            expectedResults: ongoingTest[1] ? ongoingTest[1].replaceAll(" * ", "\n") : "",
         };
     });
 }

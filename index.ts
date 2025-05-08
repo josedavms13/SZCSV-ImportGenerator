@@ -33,10 +33,6 @@ async function main() {
         // Read and process all test files
         const testSuites = testFiles.map(file => fs.readFileSync(file, 'utf-8'));
 
-        testSuites.forEach(testSuite => {
-
-        })
-
         // Generate Excel file
         const outputFile = await generateExcel(testSuites, outputPath, owner);
         console.log(`Excel file generated successfully at: ${outputFile}`);
