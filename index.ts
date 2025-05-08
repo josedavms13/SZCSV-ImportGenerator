@@ -8,11 +8,26 @@ async function main() {
         const testsDir = path.join(__dirname, 'tests');
         const outputPath = path.join(__dirname, 'output.xlsx');
 
-        const owner = process.argv[2];
-        if (!owner) {
-            console.error('Please provide the owner name as a command line argument.');
+        const ownerIdFile = path.join(__dirname, 'ownerId.txt');
+
+        let owner = '';
+        if(!fs.existsSync(ownerIdFile)) {
+            owner = process.argv[2];
+            if (!owner) {
+                console.error('Create ownerId.txt file with your owner ID or pass it as a command line argument.');
+                process.exit(1);
+            }
+        }
+
+        // Read owner ID from file if it exists
+        const readOwner = fs.readFileSync(ownerIdFile, 'utf-8');
+
+        if (readOwner.length === 0) {
+            console.error('ownerId.txt file is empty. Please provide a valid owner ID.');
             process.exit(1);
         }
+
+        owner = readOwner;
 
         // Check if tests directory exists
         if (!fs.existsSync(testsDir)) {
