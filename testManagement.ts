@@ -61,14 +61,14 @@ export function parseTest(test: string): Test {
         title,
         preconditions,
         coverageIssues,
-        steps: getSteps(steps),
+        steps: getSteps(steps, title),
         folder: folder || "",
     };
 }
 
-export function getSteps(steps: string): TestStep[] {
+export function getSteps(steps: string, testTitle: string): TestStep[] {
     const isBadEnded = steps.substring(steps.length - 4).includes("-+");
-    if (isBadEnded) throw new Error("Bad test ending. Please remove '-+'");
+    if (isBadEnded) throw new Error(`Test: "${testTitle}", has a Bad test ending. Please remove '-+'`);
 
     const resultToReturn = steps.split("-+");
     const trimmedParts = resultToReturn.map((result) => result.trim());
